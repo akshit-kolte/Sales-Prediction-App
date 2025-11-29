@@ -4,7 +4,7 @@ import joblib
 import streamlit as st
 #Load the Model
 
-model=joblib.load(open("linear_regression_model.joblib",'rb'))
+model=joblib.load(open("linear_regression_model.joblib", 'rb'))
 
 st.title("Sales Prediction app")
 #Input feature
@@ -14,9 +14,10 @@ Newspaper=st.number_input("Newspaper Adv Budget",min_value=0.0)
 
 #Make Pred
 if st.button('predict sales'):
-	    input_data=np.array([[TV,Radio,Newspaper]])
-	    prediction_model=model.predict(input_data)[0]
-	    st.success(f'predict sales:{prediction:.2f}')
+	input_data=np.array([[TV,Radio,Newspaper]])
+	prediction_model=model.predict(input_data)[0]
+	st.success(f'predict sales:{prediction:.2f}')
+
 
 
 
