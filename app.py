@@ -4,7 +4,7 @@ import joblib
 import stremlit as st
 #Load the Model
 
-model=joblib.load(open("linear_regression_model.joblib",'rb')
+model=joblib.load(open("linear_regression_model.joblib",'rb'))
 
 st.title("Sales Prediction app")
 #Input feature
@@ -17,4 +17,5 @@ if st.button('Predict Sales'):
 	input_data=np.array([[TV,Radio,Newspaper]])
 	prediction_model=model.predict(input_data)[0]
 	st.success(f'predict sales:{prediction:2f}').
+
 
