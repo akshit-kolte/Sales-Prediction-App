@@ -1,0 +1,19 @@
+import pandas as pd
+import numpy as np
+import joblib
+import stremlit as st
+#Load the Model
+
+model=joblib.load(open("linear_regression_model.joblib")
+
+st.title("Sales Prediction app")
+#Input feature
+TV=st.number_input("TV Adv Budget",min_value=0.0)
+Radio=st.number_input("Radio Adv Budget",min_value=0.0)
+Newspaper=st.number_input("Newspaper Adv Budget",min_value=0.0)
+
+#Make Pred
+if st.button('Predict Sales'):
+	input_data=np.array([[TV,Radio,Newspaper]])
+	prediction_model=model.predict(input_data)[0]
+	st.success(f'predict sales:{prediction:2f}').
